@@ -7,22 +7,27 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
+    <link href="css/print.css" rel="stylesheet" media="print">
 
-    <script>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
-
-      // Optional TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
-    </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
+
+    <!-- Hmm, what is the impact of web fonts on speed? Measure it... 
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="preload" as="style">
+    -->
+
+    <!-- connect to domain of font files -->
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <!-- optionally increase loading priority -->
+    <link rel="preload" as="style" href="//fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <!-- async CSS -->
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="//fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <!-- no-JS fallback -->
+    <noscript>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    </noscript>
+
   </head>
 
   <body>
@@ -57,7 +62,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria-100px.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
